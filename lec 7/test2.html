@@ -17,6 +17,40 @@
     </main>
 
     <script>
+        let ans=document.createElement("p");
+        console.log(ans);
+        ans.innerText="rayat bahra university";
+        console.log(ans);
+        let ans=document.createElement("img");
+        ans.src="nature.jpeg";
+        console.log(ans);
+
+        let div = document.createElement("div");
+        let para = document.createElement("p");
+        para.innerHTML = "RBU";
+
+        let para2 = document.createElement("p");
+        para2.innerHTML = "SRMU";
+
+        let para3 = document.createElement("p");
+        para3.innerHTML = "JUNCR";
+
+
+        let main=document.querySelectorAll("main");
+        main[0].append(para);
+        main[0].append(para2);
+        main[0].append(para3);
+        main[0].append(ans);
+
+
+
+        div.append(para);
+        div.append(para2);
+        div.append(para3);
+        div.prepend(para3);
+        div.appendChild(para);
+        console.log(div);
+
        
 
 
