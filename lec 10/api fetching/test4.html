@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* background-color: aquamarine; */
+            margin: 20px;
+            padding: 20px;
+            gap:10px;
+        }
+        section{
+            margin: 20px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>ID</h1>
+        <h1>name</h1>
+        <h1>email</h1>
+
+    </section>
+<main>
+
+</main>
+
+    <script>
+        const users = [
+            { id: 1, name: "John Doe", email: "john.doe@example.com" },
+            { id: 2, name: "Jane Smith", email: "jane.smith@example.com" },
+            { id: 3, name: "Alice Johnson", email: "alice.johnson@example.com" },
+            { id: 3, name: "Alice Johnson", email: "alice.johnson@example.com" },
+
+        ];
+           let main= document.getElementsByTagName("main")[0];
+        users.map((Element) => {
+            // console.log(Element);
+         let a = `  
+        <main>
+        <h1>ID=${Element.id}</h1>
+        <h1>mame=${Element.name}</h1>
+        <h1>email=${Element.email}</h1>
+         </main>
+         `;
+            console.log(a);
+           let section= document.createElement("section");
+            section.innerHTML=a;
+            // main.append(section);
+            main.appendChild(section);
+
+        })
+    </script>
+</body>
+
+</html>
