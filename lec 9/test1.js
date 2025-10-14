@@ -1,55 +1,50 @@
 // function fetchData(callback){
-//     // let callback = function(result){
+//     // callback = function(result){
 //     //     return result
 //     // }
-//     console.log("hello english ma'am")
+//     console.log("Hello Ma'am")
 //     setTimeout(()=> {
 //         callback(10);
 //         console.log(callback);
 //         callback(function(x){
-//             console.log("hello data")
+//             console.log("hello Data")
 //         })
 //     })
-
 // }
-// fetchData(function (result) {
+// fetchData(function(result){
 //     console.log(result);
 // });
-// asyncFunc1((result1) => { 
-//     asyncFunc2(result1, (result2) => { 
-//         asyncFunc3(result2, (result3) => { 
-//             // Do something with result3 
-//         }); 
-//     }); 
-// }); 
-
-const promise = new Promise((resolve, reject) => {
-    let success = true;
-    if (success)
+// asyncFunc1((result)=>{
+//     asyncFunc2(result1, (result2)=>{
+//         asyncFunc3(result2, (result3)=>{
+//             console.log("hello")
+//         })
+//     })
+// })
+const promise = new Promise((resolve, reject)=>{
+    let success = true; 
+    if(success)
         resolve("success");
-    else
+    else{
         reject("error");
+    }
 });
-
-// Handling the first promise
 promise
-    .then((data) => {
-        console.log(data);
-    })
+.then((data)=> {
+    console.log(data);
+})
     .catch((err) => console.error(err));
 
-console.log(promise);            // Will show pending or resolved promise
-console.log(typeof promise);     // object
-
-// ✅ Another promise with setTimeout
-let a = new Promise((resolve, reject) => {
+console.log(promise);           
+console.log(typeof promise);     
+let x = new Promise((resolve, reject)=>{
     setTimeout(() => {
         let ans = 75;
         resolve(ans);
     }, 3000);
 });
 
-a.then((roll) => {
+x.then((roll) => {
     console.log(roll);
     let head = document.getElementsByTagName("h1");
     if (head.length > 0) {
@@ -61,4 +56,45 @@ a.then((roll) => {
     })
     .finally(() => {
         console.log("session completed");
+    });
+
+
+let a = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let ans = 75;
+        resolve(ans);
+    }, 3000);
+});
+
+let b = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Promise B done");
+    }, 2000);
+});
+
+let c = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject("Promise C failed");
+    }, 1000);
+});
+Promise.all([a, b])
+    .then((values) => {
+        console.log("Promise.all resolved:", values);
+    })
+    .catch((error) => {
+        console.log("Promise.all rejected:", error);
+    });
+Promise.any([a, c])
+    .then((firstResolved) => {
+        console.log("Promise.any resolved first:", firstResolved);
+    })
+    .catch((error) => {
+        console.log("Promise.any rejected:", error);
+    });
+Promise.race([a, b, c])
+    .then((firstCompleted) => {
+        console.log("Promise.race completed first:", firstCompleted);
+    })
+    .catch((error) => {
+        console.log("Promise.race rejected first:", error);
     });

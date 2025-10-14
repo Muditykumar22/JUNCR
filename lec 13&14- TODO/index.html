@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Outstanding To-Do List</title>
+</head>
+
+<body>
+
+    <!-- LOGIN PAGE (Visible by default) -->
+    <div id="loginPage" class="full-page-card">
+        <h2>Welcome Back!</h2>
+        <p>Please log in to access your To-Do List.</p>
+
+        <div class="login-input-group">
+            <label for="usernameInputLogin">Username:</label>
+            <input type="text" id="usernameInputLogin" placeholder="Enter your username" class="profile-input">
+
+            <label for="passwordInputLogin">Password:</label>
+            <input type="password" id="passwordInputLogin" placeholder="Enter your password" class="profile-input">
+        </div>
+
+        <button id="loginBtn" class="profile-btn save-btn">Login</button>
+        <p id="loginError"></p>
+    </div>
+
+    <!-- MAIN CONTENT CARD (To-Do List) - Hidden initially -->
+    <div class="container" id="mainContent" style="display: none;">
+
+        <!-- PROFILE DISPLAY SECTION -->
+        <div id="profileSection" class="profile-card">
+            <div id="profileDisplay">
+                <div>
+                    <h3 id="displayName">Hello, User!</h3>
+                </div>
+                <button id="editProfileBtn" class="profile-btn">Edit Profile</button>
+            </div>
+        </div>
+
+        <div class="cont">
+            <div class="header">
+                <h1 class="main-heading">Outstanding To-Do List</h1>
+
+                <!-- INPUTS: Task, Time, Add Button -->
+                <div class="input-group">
+                    <input type="text" id="taskInput" placeholder="Enter a new task">
+                    <input type="time" id="timeInput">
+                    <button id="addBtn">Add Task</button>
+                </div>
+            </div>
+
+            <div class="mid">
+                <!-- FILTER CONTROLS -->
+                <div id="filterControls">
+                    <button id="filterAll" class="filter-btn active">Show All</button>
+                    <button id="filterActive" class="filter-btn">Active</button>
+                    <button id="filterCompleted" class="filter-btn">Completed</button>
+                </div>
+
+                <ul id="taskList">
+                    <!-- Tasks will appear here -->
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SIMULATED "EDIT PROFILE" PAGE/SECTION - Hidden initially -->
+    <div id="editPage" class="full-page-card" style="display: none;">
+        <h2>Edit Profile</h2>
+
+        <label for="userNameInput">Name:</label>
+        <input type="text" id="userNameInput" placeholder="Your Name" value="User" class="profile-input">
+
+        <div class="profile-btn-group">
+            <button id="saveProfileBtn" class="profile-btn save-btn">Save Changes</button>
+            <button id="cancelProfileBtn" class="profile-btn cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

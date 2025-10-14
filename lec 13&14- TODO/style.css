@@ -1,0 +1,381 @@
+/* GLOBAL & BODY STYLES */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+/* MAIN CARD CONTAINER STYLING */
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+}
+
+.header {
+    max-width: 550px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.mid {
+    width: 460px;
+    background: #ffffff;
+    padding: 10px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #343a40;
+    font-size: 1.8em;
+    border-bottom: 2px solid #ced4da;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    margin-top: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* INPUT & BUTTON GROUP */
+.input-group {
+    display: flex;
+    gap: 20px;
+}
+
+.input-group div input {
+    width: 100%;
+}
+
+#taskInput {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 1em;
+    border: 2px solid #ced4da;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+}
+
+#timeInput {
+    padding: 0 12px;
+    font-size: 1em;
+    border: 2px solid #ced4da;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+#addBtn {
+    padding: 12px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addBtn:hover {
+    background-color: #0056b3;
+}
+
+/* ------------------------------------------- */
+/* NEW STYLING FOR FILTER CONTROLS (TASK 11.1) */
+/* ------------------------------------------- */
+
+#filterControls {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0 0 0;
+    gap: 10px;
+    border-bottom: 2px solid #ced4da;
+    padding-bottom: 15px;
+}
+
+#filterControls button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    font-weight: 600;
+    background-color: #f8f9fa;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+#filterControls button:hover {
+    background-color: #e9ecef;
+    border-color: #007bff;
+}
+
+/* Active State */
+#filterControls button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+/* ------------------------------------------- */
+/* TASK LIST STYLING */
+/* ------------------------------------------- */
+
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+
+#taskList li {
+    background-color: #f8f9fa;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* BUTTONS INSIDE LIST ITEMS (Priority & Delete) */
+#taskList li button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-left: 10px;
+    padding: 0;
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+#taskList li button:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* TASK SPAN (TEXT) STYLING */
+#taskList li span {
+    flex-grow: 1;
+    cursor: pointer;
+    padding-right: 15px;
+}
+
+/* UNIQUE FEATURES CSS */
+
+/* Completed Task */
+.completed {
+    text-decoration: line-through;
+    color: #868e96 !important;
+}
+
+/* Priority Task */
+.priority-high {
+    border-left: 5px solid #dc3545;
+    /* Red border for high priority */
+    background-color: #fff0f0;
+    /* Soft pink background for contrast */
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+    }
+
+    #taskInput {
+        border-radius: 6px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #addBtn {
+        border-radius: 6px;
+    }
+}
+
+
+/* ------------------------------------------- */
+/* PROFILE SECTION STYLING */
+/* ------------------------------------------- */
+
+.profile-card {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px dashed #ced4da;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+}
+
+#profileDisplay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#profileDisplay h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #007bff;
+    /* Primary color highlight */
+}
+
+.profile-btn {
+    padding: 8px 15px;
+    background-color: #6c757d;
+    /* Gray color for profile buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.profile-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Edit Mode Styling */
+.profile-edit-mode {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-input,
+.profile-select {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.save-btn {
+    background-color: #28a745;
+    width: 100%;
+}
+
+.save-btn:hover {
+    background-color: #1e7e34;
+}
+
+.cancel-btn {
+    background-color: #dc3545;
+    /* Red for Cancel */
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+}
+
+/* Initial state of the edit form (hidden) */
+/* #profileEdit {
+    JavaScript is setting display: none initially, but good to have a class
+    display: none;
+} */
+
+#loginPage {
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#loginPage h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#loginPage p {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 25px;
+}
+
+.login-input-group label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #343a40;
+}
+
+.login-input-group .profile-input {
+    background-color: transparent;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+
+}
+
+#loginBtn {
+    background-color: #007bff;
+}
+
+#loginBtn:hover {
+    background-color: #0056b3;
+}
+
+.full-page-card {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.full-page-card h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+}
+
+.full-page-card label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #343a40;
+}
+
+.full-page-card input {
+    background-color: transparent;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+}
