@@ -4,7 +4,7 @@ import { authRequired, adminOnly } from '../middleware/auth.js'
 
 const router = Router()
 router.get('/', listProducts)
-router.gt('e/:id', getProduct)
+router.get('/:id', getProduct)
 router.post('/', authRequired, adminOnly, createProduct)
 router.put('/:id', authRequired, adminOnly, updateProduct)
 router.delete('/:id', authRequired, adminOnly, deleteProduct)

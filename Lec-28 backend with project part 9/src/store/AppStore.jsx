@@ -68,7 +68,7 @@ export function AppStoreProvider({ children }) {
 
   // Cart
   function addToCart(productId, qty = 1) {
-    sfetCartItems((prev) => {
+    setCartItems((prev) => {
       const found = prev.find((c) => c.id === productId)
       if (found) {
         return prev.map((c) => (c.id === productId ? { ...c, qty: c.qty + qty } : c))
@@ -213,52 +213,14 @@ export function AppStoreProvider({ children }) {
     notify,
     dismissNotification,
   }
-  return <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
 
+  return <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
 }
-export function useAppStore(){
+
+export function useAppStore() {
   const ctx = useContext(StoreContext)
-  if(!ctx) throw new Error('useAppstore must be used within appstoreprovider')
+  if (!ctx) throw new Error('useAppStore must be used within AppStoreProvider')
   return ctx
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
